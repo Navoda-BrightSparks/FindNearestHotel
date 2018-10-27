@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular JS</title>
+    <base href="/app/">
+    <link rel="stylesheet" href="Static/bootstrap.css">
+    <link rel="stylesheet" href="Static/bootstrap-theme.css">
+    <style>
+        body {
+            font-family: Century Gothic ;
+            color: white;
+        }
+        .split {
+            height: 100%;
+            width: 50%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            overflow-x: hidden;
+
+        }
+
+        .left {
+            left: 0;
+            background-image: url("Static/Images/BG Image.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+        }
+
+        .right {
+            right: 0;
+            background-color: red;
+        }
+        div h1{
+            letter-spacing: 5px;
+            margin-top:50px;
+            border-bottom: solid 1px #ffffff;
+            padding-bottom: 10px;
+        }
+        div h3{
+            letter-spacing: 5px;
+            font-weight: 100;
+        }
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .centered img {
+            width: 300px;
+            border-radius: 50%;
+        }
+        div p{
+            margin-top: 20px;
+            letter-spacing: 3px;
+            text-align: center;
+            font-size:12px;
+            display: inline;
+            
+            ;
+        }
+
+    </style>
+</head>
+<body ng-app="HotelApp">
+<div class="split left">
+    <div class="centered">
+        <img src="Static/Images/Logo.png" alt="logo">
+        <h1> ATLAS LABS</h1>
+        <h3>SKILL TEST</h3>
+        <p>Copyright &copy 2018 All Rights Reserved | Atlas Labs Pty ltd</p>
+    </div>
+</div>
+
+<div class="split right">
+    <div class="container">
+        <h2 class="header">Welcome to Driver App</h2>
+        <div ng-view></div>
+    </div>
+</div>
+<div class = "col-md-6 text-center" id="logoDiv">
+    <!-- Content goes here -->
+</div>
+<div class = "col-md-6 text-center">
+    <!-- Content goes here -->
+</div>
+<script src="Static/jquery.min.js"></script>
+<script src="Static/bootstrap.js"></script>
+<script src="Static/angular.js"></script>
+<script src="Static/angular-route.js"></script>
+
+<script src="Modules/app.module.js"></script>
+<script src="Services/hotel.service.js"></script>
+<script src="Controllers/main.controller.js"></script>
+<script src="Routes/main.routes.js"></script>
+</body>
+</html>
