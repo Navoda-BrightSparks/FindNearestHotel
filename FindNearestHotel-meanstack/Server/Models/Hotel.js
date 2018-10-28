@@ -8,33 +8,38 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const HotelSchema = new Schema({
-    firstName: {
+    Name: {
         type: String,
         required: true
     },
-    lastName: {
+    Contact: {
         type: String,
         required: true
     },
-    birthday: {
-        type: Date,
-        required: true
-    },
-    vehicle: {
+    Email: {
         type: String,
         required: true
     },
-    ranking: {
+    Longitude: {
         type: Number,
-        unique: true,
         required: true
     },
-    comments: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Comment'
-    }]
+    Latitude: {
+        type: Number,
+        required: true
+    },
+    Amount: {
+        type: Number,
+        required: true
+    },
+    Location: {
+        type: String,
+
+        required: true
+    },
+
 });
 
-const Hotel = mongoose.model('Driver', HotelSchema);
+const Hotel = mongoose.model('Hotel', HotelSchema);
 
-module.exports = Driver;
+module.exports = Hotel;

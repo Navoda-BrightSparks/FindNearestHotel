@@ -10,7 +10,7 @@ const bodyParser = require('body-parser'),
 mongoose.Promise = global.Promise;
 
 require('./Server/Models/Places');
-
+require('./Server/Models/Hotel');
 const HotelRoute = require('./Server/Routes/main.route.js');
 
 const app = express();

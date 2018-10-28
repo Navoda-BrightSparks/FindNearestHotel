@@ -11,7 +11,7 @@
                 <div class="col ">
                     <select class="selectBox" ng-required="required" ng-model="location" ng-options=" x as x
                 for
- x in places"></select>
+ x in places" ng-change="changeLocation()"></select>
 
                 </div>
             </div>
@@ -24,8 +24,8 @@
             <div class="col-3"><label>Amount</label></div>
 
             <div class="col">
-       <input type="text" class="myBox">
-          <span style="font-size: 10px;"><button type="submit" id="btnsubmit" ng-disabled="userForm.$invalid" style=" background-color: #ffb512;color: white ">Go
+       <input type="text" class="myBox" ng-model="price" ng-change="changeByAmount()">
+          <span style="font-size: 10px;"><button type="button" id="btnsubmit" ng-click="changeByBoth()" style=" background-color: #ffb512;color: white ">Go
             </button></span>
 
             </div>
@@ -39,12 +39,12 @@
 
             <div class="row">
 
-                <div class="col-3"><label>Hotels</label></div>
+                <div class="col-2"><label>Hotels</label></div>
 
-                <div class="col ">
-                    <select class="selectBox" ng-required="required" ng-model="npatient.title" ng-options="x
-                for
-                 x in titles"></select>
+                <div class="col">
+                    <select ng-model="Name" ng-options="Hotel.Name as Hotel.Name
+                     for
+                      Hotel in Hotel.Names" style="font-size: small" class="selectBox" ng-change="change()"></select>
 
                 </div>
             </div>
@@ -53,12 +53,12 @@
 
             <div class="row">
 
-                <div class="col-3"><label>Hotels</label></div>
+                <div class="col-2"><label>Hotels</label></div>
 
                 <div class="col ">
-                    <select class="selectBox" ng-required="required" ng-model="npatient.title" ng-options="x
-                for
-                 x in titles"></select>
+                    <select ng-model="Amount" ng-options="Hotel.Name as Hotel.Name
+                     for
+                      Hotel in Hotel.Amounts" style="font-size: small" class="selectBox"  ng-change="AmountChange()"></select>
 
                 </div>
             </div>
@@ -70,25 +70,25 @@
     <div class="row">
         <div class="col-3"><label>Hotel Name</label></div>
         <div class="col">
-            <input type="text" class="myBox">
+            <input type="text" class="myBox" ng-model="HotelDetail.Name">
         </div>
     </div>
     <div class="row">
         <div class="col-3"><label>Amount</label></div>
         <div class="col">
-            <input type="text" class="myBox">
+            <input type="text" class="myBox" ng-model="HotelDetail.Amount">
         </div>
     </div>
     <div class="row">
         <div class="col-3"><label>Contact</label></div>
         <div class="col">
-            <input type="text" class="myBox">
+            <input type="text" class="myBox" ng-model="HotelDetail.Contact">
         </div>
     </div>
     <div class="row">
         <div class="col-3"><label>Email</label></div>
         <div class="col">
-            <input type="text" class="myBox">
+            <input type="text" class="myBox" ng-model="HotelDetail.Email">
         </div>
     </div>
     <br>
