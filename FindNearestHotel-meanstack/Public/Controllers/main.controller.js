@@ -2,20 +2,27 @@
 
 angular.module('HotelApp').controller('MainController', ['$scope', 'HotelService',
     function ($scope, HotelService) {
+        $scope.places = [];
+        $scope.location = {};
+        $scope.location = "Galle";
+        function getPlaces() {
 
-        function getDrivers() {
-
-            HotelService.get().then(drivers => {
-                $scope.drivers = drivers;
+            HotelService.getPlaces().then(places => {
+                console.log(places)
+             $scope.places = places;
             })
         }
-
-        getDrivers();
-
-        $scope.addDriver = (driver) => {
-            HotelService.add(driver).then(() => {
-                getDrivers();
-                driver = {};
-            });
+        $scope.place = {};
+        $scope.map = {
+            center: { latitude:  7.074, longitude: 79.9929 },
+            zoom: 11
         };
+
+        $scope.marker = {
+            coords: { latitude: 7.074, longitude: 79.9929 },
+            id: 4 ,
+            window: { title: "Manhattan New York, NY" }
+        };
+        getPlaces();
+//console.log($scope.places)
     }]);

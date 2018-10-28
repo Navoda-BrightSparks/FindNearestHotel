@@ -9,10 +9,9 @@ const bodyParser = require('body-parser'),
 
 mongoose.Promise = global.Promise;
 
-//require('./driver.model.js');
-//require('./comment.model');
+require('./Server/Models/Places');
 
-//const DriverRouter = require('./driver.route');
+const HotelRoute = require('./Server/Routes/main.route.js');
 
 const app = express();
 
@@ -32,7 +31,7 @@ app.get('/', (req, res, next) => {
     res.sendFile(__dirname + '/Public/index.html');
 });
 
-//app.use('/hotels', DriverRouter);
+app.use('/hotels', HotelRoute);
 
 app.get('/app/*', (req, res, next) => {
     res.sendFile(__dirname + '/Public/index.html');
