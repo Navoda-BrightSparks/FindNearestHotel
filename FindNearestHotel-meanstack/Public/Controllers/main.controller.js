@@ -34,19 +34,21 @@ angular.module('HotelApp').controller('MainController', ['$scope', 'HotelService
         function getHotelByName(name) {
 
             HotelService.getByName(name).then(hotel => {
-                $scope.marker = {}
-                $scope.HotelDetail = hotel[0];
-                $scope.map = {
-                    center: { latitude: hotel[0].Latitude, longitude:hotel[0].Longitude },
-                    zoom: 11
-                };
 
-                $scope.marker = {
-                    coords: {latitude: hotel[0].Latitude, longitude:hotel[0].Longitude },
-                    id: $scope.HotelDetail.Name,
-                    window: { title: "" }
-                };
-            })
+                $scope.HotelDetail = hotel[0];
+
+                    $scope.map = {
+                        center: { latitude: hotel[0].Latitude, longitude:hotel[0].Longitude },
+                        zoom: 11
+                    };
+
+                    $scope.marker = {
+                        coords: {latitude: hotel[0].Latitude, longitude:hotel[0].Longitude },
+                        id: $scope.HotelDetail.Name,
+                        window: { title: "" }
+                    };
+                });
+
         }
 
         function getHotelByLocation(location) {
